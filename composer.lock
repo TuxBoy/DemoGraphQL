@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0aa134c748f7bb4398f0b93f0f19bb9",
+    "content-hash": "bfc1c6015cc277cd6df248f4d9aa57d6",
     "packages": [
+        {
+            "name": "api-allocine/api-allocine-helper",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/etienne-gauvin/api-allocine-helper.git",
+                "reference": "fef1b92d6deca402e15864af57c7bb620c5c4dc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/etienne-gauvin/api-allocine-helper/zipball/fef1b92d6deca402e15864af57c7bb620c5c4dc6",
+                "reference": "fef1b92d6deca402e15864af57c7bb620c5c4dc6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "api-allocine-helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "CC-BY-SA"
+            ],
+            "authors": [
+                {
+                    "name": "Etienne Gauvin",
+                    "email": "etienne@gauvin.info"
+                }
+            ],
+            "description": "An easy way to use the Allocine API",
+            "homepage": "https://github.com/etienne-gauvin/api-allocine-helper",
+            "time": "2016-10-19T15:30:04+00:00"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.8.0",
@@ -6854,7 +6891,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "api-allocine/api-allocine-helper": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
