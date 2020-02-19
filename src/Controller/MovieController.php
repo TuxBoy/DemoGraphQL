@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Repository\MovieRepository;
 use App\Service\AllocineService;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MovieController extends AbstractController
@@ -11,11 +14,8 @@ class MovieController extends AbstractController
     /**
      * @Route("/movies", name="movie")
      */
-    public function index(AllocineService $allocine)
+    public function index(MovieRepository $movieRepository): Response
     {
-		dd($allocine->movies());
-        return $this->render('movie/index.html.twig', [
-            'controller_name' => 'MovieController',
-        ]);
+		return $this->json(['movies' => $movieRepository->findAll()], 200, [], ['groups' => 'group1']);
     }
 }
