@@ -1,3 +1,10 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# in app/config/routing.yml
+overblog_graphql_single_endpoint:
+  resource: "@OverblogGraphQLBundle/Resources/config/routing/single.yaml"
+  prefix: /
+
+overblog_graphql_endpoint:
+  path: /graphql
+  defaults:
+    _controller: Overblog\GraphQLBundle\Controller\GraphController::endpointAction
+    _format: "json"

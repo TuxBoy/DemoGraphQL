@@ -42,7 +42,7 @@ final class ImportMovieCommand extends Command
 		$count  = (int) $input->getArgument('count') ?? 1;
 		$page   = (int) $input->getArgument('page') ?? 10;
 		$movies = $this->allocine->movies($count, $page);
-		dd($movies);
+
 		foreach ($movies as $value) {
 			$director = new Director();
 			$director->setName($value['castingShort']['directors']);
