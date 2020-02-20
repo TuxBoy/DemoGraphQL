@@ -11,11 +11,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MovieController extends AbstractController
 {
-    /**
-     * @Route("/movies", name="movie")
-     */
+
+	/**
+	 * @Route("/movies", name="movie", methods={"GET"})
+	 *
+	 * @param MovieRepository $movieRepository
+	 * @return Response
+	 */
     public function index(MovieRepository $movieRepository): Response
     {
-		return $this->json(['movies' => $movieRepository->findAll()], 200, [], ['groups' => 'group1']);
+		return $this->json(
+			['movies' => $movieRepository->findAll()], 200, [], ['groups' => 'group1']
+		);
     }
 }
