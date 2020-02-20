@@ -1,0 +1,31 @@
+interface Casting {
+    name: String!
+}
+
+type Movie {
+    id: ID!
+    title: String!
+    synopsis: String!
+    poster: String
+    actors: [Actor]
+    director: Director
+}
+
+type Director implements Casting {
+    id: ID!
+    name: String! @deprecated(reason: "zeeza")
+}
+
+type Actor implements Casting {
+    id: ID!
+    name: String!
+}
+
+type Query {
+    movies(limit: Int = 10): [Movie]!
+    movie(id: ID!): Movie!
+}
+
+type Mutation {
+    updateMovie(id: ID!, title: String!): Movie!
+}
